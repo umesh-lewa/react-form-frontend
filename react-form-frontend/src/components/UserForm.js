@@ -50,7 +50,9 @@ const UserForm = () => {
     })
 
     let onSubmit = (event) => {
+
         event.preventDefault();
+
         let data = { name, email, country, state, city, address1, address2, gender, maritalstatus, favfood, favcolour }
         fetch('https://react-form-backend.herokuapp.com/user', {
             method: 'POST',
@@ -80,6 +82,7 @@ const UserForm = () => {
     }
 
     return (
+
         <form onSubmit={onSubmit}>
             <h3>User Details</h3>
 
@@ -169,7 +172,6 @@ const UserForm = () => {
                 <label>Favourite Colour</label>
                 <input required className="form-control" type="text" placeholder="Enter Fav Colour" value={favcolour} onChange={(event) => (setFavcolour(event.target.value))} />
             </div>
-
 
             <button type="submit" className="btn btn-primary">Submit</button>
         </form>
